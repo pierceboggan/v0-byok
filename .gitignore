@@ -1,0 +1,56 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Build / output
+dist/
+out/
+build/
+lib/
+esm/
+cjs/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.*
+.env.local
+
+# VS Code
+.vscode/
+.vscode-test/
+
+# macOS
+.DS_Store
+
+# IDEs
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Caches
+.cache/
+.parcel-cache/
+.cache-loader/
+
+# Temp
+tmp/
+temp/
+*.tmp
+
+# OS thumbnails
+Thumbs.db

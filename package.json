@@ -1,0 +1,66 @@
+{
+	"name": "v0-dev-byok-chat-provider",
+	"enabledApiProposals": [
+		"chatProvider"
+	],
+	"publisher": "pierceboggan",
+	"displayName": "v0.dev BYOK Chat Provider",
+	"description": "Bring your own v0.dev API key to use v0.dev models in GitHub Copilot Chat.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pierceboggan/fireworks-byok"
+	},
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.103.0-20250721"
+	},
+	"categories": [
+		"AI",
+		"Chat"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"contributes": {
+		"languageModels": [
+			{
+				"vendor": "v0dev",
+				"displayName": "v0.dev"
+			}
+		],
+		"configuration": {
+			"title": "v0.dev",
+			"properties": {
+				"v0dev.apiKey": {
+					"type": "string",
+					"description": "Your v0.dev API key. You can also set this via the V0_API_KEY environment variable.",
+					"scope": "application"
+				}
+			}
+		}
+	},
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"download-api": "dts dev",
+		"postdownload-api": "dts main",
+		"postinstall": "npm run download-api",
+		"compile": "tsc -p ./",
+		"lint": "eslint",
+		"watch": "tsc -watch -p ./"
+	},
+	"dependencies": {
+		"gpt-tokenizer": "^3.0.1",
+		"openai": "^5.11.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.13.0",
+		"@stylistic/eslint-plugin": "^2.9.0",
+		"@types/node": "^22",
+		"@types/vscode": "^1.102.0",
+		"@vscode/dts": "^0.4.1",
+		"eslint": "^9.13.0",
+		"typescript": "^5.8.2",
+		"typescript-eslint": "^8.26.0"
+	}
+}
